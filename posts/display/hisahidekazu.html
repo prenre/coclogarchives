@@ -1,0 +1,709 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PC Character</title>
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+:root {
+    --main-color: #7b3f3f;       /* PC名字 / 标题颜色 */
+    --text-color: #292929;
+    --sub-color: #777777;
+    --line-color: #d8d3cd;
+    --bg-color: #f7f5f1;
+    --box-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+
+    align-items: start;
+
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+
+    color: var(--main-color);
+
+    font-size: 52px;
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+
+    color: var(--sub-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #e8e4de;
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+
+    margin-bottom: 55px;
+}
+
+
+.info-item {
+    padding: 20px 15px;
+
+    border-right: 1px solid var(--line-color);
+}
+
+
+.info-item:last-child {
+    border-right: none;
+}
+
+
+.info-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--sub-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+.info-value {
+    font-size: 17px;
+}
+
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+
+.section-title {
+    margin: 0 0 25px 0;
+
+    color: var(--main-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(9, 1fr);
+
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+
+.attribute {
+    padding: 18px 8px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--line-color);
+}
+
+
+.attribute:last-child {
+    border-right: none;
+}
+
+
+.attribute-name {
+    display: block;
+
+    color: var(--sub-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.attribute-cn {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--sub-color);
+
+    font-size: 11px;
+}
+
+
+.attribute-value {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--main-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+
+    border-top: 1px solid var(--line-color);
+}
+
+
+.field:first-child {
+    border-top: none;
+}
+
+
+.field-title {
+    margin: 0 0 10px 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: var(--main-color);
+}
+
+
+.field-text {
+    margin: 0;
+
+    max-width: 850px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    column-gap: 60px;
+}
+
+
+.two-columns .field {
+    margin: 0;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.character-footer {
+    padding-top: 25px;
+
+    border-top: 1px solid var(--line-color);
+
+    color: var(--sub-color);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+
+    .character-header {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .character-name {
+        font-size: 40px;
+    }
+
+
+    .character-image {
+        max-width: 320px;
+    }
+
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+
+    .info-item {
+        border-bottom: 1px solid var(--line-color);
+    }
+
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="character-page">
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header class="character-header">
+
+        <div>
+
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+
+            <h1 class="character-name">
+                YOUR NAME
+            </h1>
+
+        </div>
+
+
+        <!-- 把这里的图片路径换成你的图片 -->
+
+        <img
+            class="character-image"
+            src="images/character.jpg"
+            alt="Character portrait"
+        >
+
+    </header>
+
+
+
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+
+        <div class="info-item">
+            <span class="info-label">Age</span>
+            <span class="info-value">27</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Gender</span>
+            <span class="info-value">Female</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Occupation</span>
+            <span class="info-value">Journalist</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Residence</span>
+            <span class="info-value">New York</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Campaign</span>
+            <span class="info-value">Campaign Name</span>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Attributes
+        </h2>
+
+
+        <div class="attributes">
+
+
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">45</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">75</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">50</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">40</span>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CHARACTER DESCRIPTION
+         ========================= -->
+
+    <section class="section">
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Appearance
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色的形象描述。可以写外貌、
+                穿着、给人的第一印象，以及一些比较具有辨识度的细节。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Ideas & Beliefs
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色的思想与信念。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Important People
+            </h2>
+
+            <p class="field-text">
+                在这里填写对角色而言重要的人，以及他们之间的关系。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Significant Locations
+            </h2>
+
+            <p class="field-text">
+                在这里填写对角色而言意义非凡的地方。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Treasured Possessions
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色最珍视的物品。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Wounds & Scars
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色留下的伤口、疤痕以及它们背后的故事。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Phobias & Manias
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色的恐惧症与躁狂症。
+            </p>
+
+        </div>
+
+
+        <div class="field">
+
+            <h2 class="field-title">
+                Background
+            </h2>
+
+            <p class="field-text">
+                在这里填写角色的完整背景故事。
+
+                这一部分可以写得比较长。网页会自动根据文字长度
+                向下延伸，不需要手动调整高度。
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer class="character-footer">
+
+        PLAYER CHARACTER · YOUR CAMPAIGN · 2026
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
+```
