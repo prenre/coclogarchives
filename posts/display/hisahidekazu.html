@@ -10,17 +10,24 @@
 <style>
 
 /* =========================
-   BASIC SETTINGS
+   COLOR PALETTE
    ========================= */
 
 :root {
-    --main-color: #7b3f3f;       /* PC名字 / 标题颜色 */
-    --text-color: #292929;
-    --sub-color: #777777;
-    --line-color: #d8d3cd;
-    --bg-color: #f7f5f1;
-    --box-color: #ffffff;
+    --main-color: #173F5F;      /* 深蓝：名字、标题 */
+    --dark-blue: #102A43;       /* 更深的蓝 */
+    --text-color: #243B53;      /* 正文 */
+    --sub-color: #627D98;       /* 辅助文字 */
+    --line-color: #B8CEDD;      /* 浅蓝灰边框 */
+    --bg-color: #EAF4F8;        /* 浅蓝背景 */
+    --box-color: #F8FCFD;       /* 浅色内容区 */
+    --accent-color: #2F6690;    /* 强调蓝 */
 }
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
 
 * {
     box-sizing: border-box;
@@ -28,6 +35,7 @@
 
 body {
     margin: 0;
+
     background: var(--bg-color);
     color: var(--text-color);
 
@@ -46,6 +54,7 @@ body {
 
 .character-page {
     max-width: 1000px;
+
     margin: 70px auto;
     padding: 0 35px;
 }
@@ -56,8 +65,11 @@ body {
    ========================= */
 
 .character-header {
+
     display: grid;
+
     grid-template-columns: 1fr 280px;
+
     gap: 60px;
 
     align-items: start;
@@ -69,6 +81,7 @@ body {
 /* PC NAME */
 
 .character-name {
+
     margin: 0;
     padding-top: 15px;
 
@@ -84,6 +97,7 @@ body {
 /* small label above name */
 
 .character-label {
+
     margin-bottom: 10px;
 
     color: var(--sub-color);
@@ -93,8 +107,10 @@ body {
         Helvetica,
         sans-serif;
 
-    font-size: 12px;
-    letter-spacing: 0.18em;
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+
     text-transform: uppercase;
 }
 
@@ -102,14 +118,18 @@ body {
 /* CHARACTER IMAGE */
 
 .character-image {
+
     width: 100%;
+
     aspect-ratio: 3 / 4;
 
     object-fit: cover;
 
     display: block;
 
-    background: #e8e4de;
+    background: #D7E8F0;
+
+    border: 1px solid var(--line-color);
 }
 
 
@@ -118,6 +138,7 @@ body {
    ========================= */
 
 .basic-info {
+
     display: grid;
 
     grid-template-columns:
@@ -131,6 +152,7 @@ body {
 
 
 .info-item {
+
     padding: 20px 15px;
 
     border-right: 1px solid var(--line-color);
@@ -138,11 +160,13 @@ body {
 
 
 .info-item:last-child {
+
     border-right: none;
 }
 
 
 .info-label {
+
     display: block;
 
     margin-bottom: 5px;
@@ -155,12 +179,17 @@ body {
         sans-serif;
 
     font-size: 10px;
+
     letter-spacing: 0.15em;
+
     text-transform: uppercase;
 }
 
 
 .info-value {
+
+    color: var(--dark-blue);
+
     font-size: 17px;
 }
 
@@ -170,11 +199,13 @@ body {
    ========================= */
 
 .section {
+
     margin-bottom: 60px;
 }
 
 
 .section-title {
+
     margin: 0 0 25px 0;
 
     color: var(--main-color);
@@ -185,9 +216,11 @@ body {
         sans-serif;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 0.2em;
+
     text-transform: uppercase;
 }
 
@@ -197,6 +230,7 @@ body {
    ========================= */
 
 .attributes {
+
     display: grid;
 
     grid-template-columns:
@@ -208,6 +242,7 @@ body {
 
 
 .attribute {
+
     padding: 18px 8px;
 
     text-align: center;
@@ -217,11 +252,13 @@ body {
 
 
 .attribute:last-child {
+
     border-right: none;
 }
 
 
 .attribute-name {
+
     display: block;
 
     color: var(--sub-color);
@@ -238,6 +275,7 @@ body {
 
 
 .attribute-cn {
+
     display: block;
 
     margin-top: 2px;
@@ -249,6 +287,7 @@ body {
 
 
 .attribute-value {
+
     display: block;
 
     margin-top: 7px;
@@ -261,6 +300,7 @@ body {
         sans-serif;
 
     font-size: 22px;
+
     font-weight: 700;
 }
 
@@ -270,6 +310,7 @@ body {
    ========================= */
 
 .field {
+
     padding-top: 22px;
     padding-bottom: 30px;
 
@@ -278,12 +319,16 @@ body {
 
 
 .field:first-child {
+
     border-top: none;
 }
 
 
 .field-title {
+
     margin: 0 0 10px 0;
+
+    color: var(--main-color);
 
     font-family:
         Arial,
@@ -291,19 +336,22 @@ body {
         sans-serif;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 0.16em;
-    text-transform: uppercase;
 
-    color: var(--main-color);
+    text-transform: uppercase;
 }
 
 
 .field-text {
+
     margin: 0;
 
     max-width: 850px;
+
+    color: var(--text-color);
 
     font-size: 16px;
 }
@@ -314,6 +362,7 @@ body {
    ========================= */
 
 .two-columns {
+
     display: grid;
 
     grid-template-columns:
@@ -324,6 +373,7 @@ body {
 
 
 .two-columns .field {
+
     margin: 0;
 }
 
@@ -333,6 +383,7 @@ body {
    ========================= */
 
 .character-footer {
+
     padding-top: 25px;
 
     border-top: 1px solid var(--line-color);
@@ -357,12 +408,15 @@ body {
 @media (max-width: 750px) {
 
     .character-page {
+
         margin: 35px auto;
+
         padding: 0 20px;
     }
 
 
     .character-header {
+
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -370,43 +424,52 @@ body {
 
 
     .character-name {
+
         font-size: 40px;
     }
 
 
     .character-image {
+
         max-width: 320px;
     }
 
 
     .basic-info {
+
         grid-template-columns:
             repeat(2, 1fr);
     }
 
 
     .info-item:nth-child(2n) {
+
         border-right: none;
     }
 
 
     .info-item {
-        border-bottom: 1px solid var(--line-color);
+
+        border-bottom:
+            1px solid var(--line-color);
     }
 
 
     .attributes {
+
         grid-template-columns:
             repeat(3, 1fr);
     }
 
 
     .attribute:nth-child(3n) {
+
         border-right: none;
     }
 
 
     .two-columns {
+
         grid-template-columns: 1fr;
     }
 
@@ -441,7 +504,12 @@ body {
         </div>
 
 
-        <!-- 把这里的图片路径换成你的图片 -->
+        <!--
+            把这里换成你的角色图片
+
+            例如：
+            src="images/pc01.jpg"
+        -->
 
         <img
             class="character-image"
@@ -460,28 +528,67 @@ body {
     <section class="basic-info">
 
         <div class="info-item">
-            <span class="info-label">Age</span>
-            <span class="info-value">27</span>
+
+            <span class="info-label">
+                Age
+            </span>
+
+            <span class="info-value">
+                27
+            </span>
+
         </div>
 
-        <div class="info-item">
-            <span class="info-label">Gender</span>
-            <span class="info-value">Female</span>
-        </div>
 
         <div class="info-item">
-            <span class="info-label">Occupation</span>
-            <span class="info-value">Journalist</span>
+
+            <span class="info-label">
+                Gender
+            </span>
+
+            <span class="info-value">
+                Female
+            </span>
+
         </div>
 
-        <div class="info-item">
-            <span class="info-label">Residence</span>
-            <span class="info-value">New York</span>
-        </div>
 
         <div class="info-item">
-            <span class="info-label">Campaign</span>
-            <span class="info-value">Campaign Name</span>
+
+            <span class="info-label">
+                Occupation
+            </span>
+
+            <span class="info-value">
+                Journalist
+            </span>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span class="info-label">
+                Residence
+            </span>
+
+            <span class="info-value">
+                New York
+            </span>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span class="info-label">
+                Campaign
+            </span>
+
+            <span class="info-value">
+                Campaign Name
+            </span>
+
         </div>
 
     </section>
@@ -572,11 +679,13 @@ body {
 
 
     <!-- =========================
-         CHARACTER DESCRIPTION
+         CHARACTER INFORMATION
          ========================= -->
 
     <section class="section">
 
+
+        <!-- APPEARANCE -->
 
         <div class="field">
 
@@ -585,12 +694,19 @@ body {
             </h2>
 
             <p class="field-text">
-                在这里填写角色的形象描述。可以写外貌、
-                穿着、给人的第一印象，以及一些比较具有辨识度的细节。
+
+                在这里填写角色的形象描述。
+
+                可以写外貌、穿着、给人的第一印象，
+                以及一些比较具有辨识度的细节。
+
             </p>
 
         </div>
 
+
+
+        <!-- IDEAS & BELIEFS -->
 
         <div class="field">
 
@@ -599,11 +715,16 @@ body {
             </h2>
 
             <p class="field-text">
+
                 在这里填写角色的思想与信念。
+
             </p>
 
         </div>
 
+
+
+        <!-- IMPORTANT PEOPLE -->
 
         <div class="field">
 
@@ -612,11 +733,17 @@ body {
             </h2>
 
             <p class="field-text">
-                在这里填写对角色而言重要的人，以及他们之间的关系。
+
+                在这里填写对角色而言重要的人，
+                以及他们之间的关系。
+
             </p>
 
         </div>
 
+
+
+        <!-- SIGNIFICANT LOCATIONS -->
 
         <div class="field">
 
@@ -625,11 +752,16 @@ body {
             </h2>
 
             <p class="field-text">
+
                 在这里填写对角色而言意义非凡的地方。
+
             </p>
 
         </div>
 
+
+
+        <!-- TREASURED POSSESSIONS -->
 
         <div class="field">
 
@@ -638,11 +770,16 @@ body {
             </h2>
 
             <p class="field-text">
+
                 在这里填写角色最珍视的物品。
+
             </p>
 
         </div>
 
+
+
+        <!-- WOUNDS & SCARS -->
 
         <div class="field">
 
@@ -651,11 +788,17 @@ body {
             </h2>
 
             <p class="field-text">
-                在这里填写角色留下的伤口、疤痕以及它们背后的故事。
+
+                在这里填写角色留下的伤口、
+                疤痕以及它们背后的故事。
+
             </p>
 
         </div>
 
+
+
+        <!-- PHOBIAS & MANIAS -->
 
         <div class="field">
 
@@ -664,11 +807,16 @@ body {
             </h2>
 
             <p class="field-text">
+
                 在这里填写角色的恐惧症与躁狂症。
+
             </p>
 
         </div>
 
+
+
+        <!-- BACKGROUND -->
 
         <div class="field">
 
@@ -677,10 +825,13 @@ body {
             </h2>
 
             <p class="field-text">
+
                 在这里填写角色的完整背景故事。
 
-                这一部分可以写得比较长。网页会自动根据文字长度
-                向下延伸，不需要手动调整高度。
+                这一部分可以写得比较长。
+                网页会自动根据文字长度向下延伸，
+                不需要手动调整高度。
+
             </p>
 
         </div>
