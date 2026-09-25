@@ -64,15 +64,10 @@ body {
    ========================= */
 
 .character-header {
-
     display: grid;
-
     grid-template-columns: 1fr 280px;
-
     gap: 60px;
-
     align-items: start;
-
     margin-bottom: 60px;
 }
 
@@ -80,15 +75,11 @@ body {
 /* PC NAME */
 
 .character-name {
-
     margin: 0;
     padding-top: 15px;
-
     color: #228B22;
-
     font-size: 52px;
     font-weight: 800;
-
     line-height: 1.15;
 }
 
@@ -96,20 +87,14 @@ body {
 /* small label above name */
 
 .character-label {
-
     margin-bottom: 10px;
-
     color: var(--sub-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 0.2em;
-
     text-transform: uppercase;
 }
 
@@ -117,17 +102,11 @@ body {
 /* CHARACTER IMAGE */
 
 .character-image {
-
-    width: 100%;
-
+    width: 220px;
     aspect-ratio: 3 / 4;
-
     object-fit: cover;
-
     display: block;
-
     background: #D7E8F0;
-
     border: 1px solid var(--line-color);
 }
 
@@ -137,58 +116,42 @@ body {
    ========================= */
 
 .basic-info {
-
     display: grid;
-
     grid-template-columns:
         repeat(5, 1fr);
-
     border-top: 1px solid var(--line-color);
     border-bottom: 1px solid var(--line-color);
-
     margin-bottom: 55px;
 }
 
 
 .info-item {
-
     padding: 20px 15px;
-
     border-right: 1px solid var(--line-color);
 }
 
 
 .info-item:last-child {
-
     border-right: none;
 }
 
 
 .info-label {
-
     display: block;
-
     margin-bottom: 5px;
-
     color: var(--sub-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 0.15em;
-
     text-transform: uppercase;
 }
 
 
 .info-value {
-
     color: var(--dark-blue);
-
     font-size: 17px;
 }
 
@@ -198,28 +161,20 @@ body {
    ========================= */
 
 .section {
-
     margin-bottom: 60px;
 }
 
 
 .section-title {
-
     margin: 0 0 25px 0;
-
     color: var(--main-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 12px;
-
     font-weight: 700;
-
     letter-spacing: 0.2em;
-
     text-transform: uppercase;
 }
 
@@ -229,267 +184,179 @@ body {
    ========================= */
 
 .attributes {
-
     display: grid;
-
     grid-template-columns:
         repeat(9, 1fr);
-
     border-top: 1px solid var(--line-color);
     border-bottom: 1px solid var(--line-color);
 }
 
-
 .attribute {
-
     padding: 18px 8px;
-
     text-align: center;
-
     border-right: 1px solid var(--line-color);
 }
 
-
 .attribute:last-child {
-
     border-right: none;
 }
 
-
 .attribute-name {
-
     display: block;
-
     color: var(--sub-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 0.08em;
 }
 
-
 .attribute-cn {
-
     display: block;
-
     margin-top: 2px;
-
     color: var(--sub-color);
-
     font-size: 11px;
 }
 
-
 .attribute-value {
-
     display: block;
-
     margin-top: 7px;
-
     color: var(--main-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 22px;
-
     font-weight: 700;
 }
-
 
 /* =========================
    TEXT FIELDS
    ========================= */
 
 .field {
-
     padding-top: 22px;
     padding-bottom: 30px;
-
     border-top: 1px solid var(--line-color);
 }
 
-
 .field:first-child {
-
     border-top: none;
 }
 
-
 .field-title {
-
     margin: 0 0 10px 0;
-
     color: var(--main-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 11px;
-
     font-weight: 700;
-
     letter-spacing: 0.16em;
-
     text-transform: uppercase;
 }
 
-
 .field-text {
-
     margin: 0;
-
     max-width: 850px;
-
     color: var(--text-color);
-
     font-size: 16px;
 }
-
 
 /* =========================
    TWO-COLUMN FIELDS
    ========================= */
 
 .two-columns {
-
     display: grid;
-
     grid-template-columns:
         1fr 1fr;
-
     column-gap: 60px;
 }
 
-
 .two-columns .field {
-
     margin: 0;
 }
-
 
 /* =========================
    FOOTER
    ========================= */
-
+   
 .character-footer {
-
     padding-top: 25px;
-
     border-top: 1px solid var(--line-color);
-
     color: var(--sub-color);
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 0.15em;
 }
-
 
 /* =========================
    MOBILE
    ========================= */
 
 @media (max-width: 750px) {
-
     .character-page {
-
         margin: 35px auto;
-
         padding: 0 20px;
     }
 
-
     .character-header {
-
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
-
     .character-name {
-
         font-size: 40px;
     }
 
-
     .character-image {
-
         max-width: 320px;
     }
 
-
     .basic-info {
-
         grid-template-columns:
             repeat(2, 1fr);
     }
 
-
     .info-item:nth-child(2n) {
-
         border-right: none;
     }
 
-
     .info-item {
-
         border-bottom:
             1px solid var(--line-color);
     }
 
-
     .attributes {
-
         grid-template-columns:
             repeat(3, 1fr);
     }
 
-
     .attribute:nth-child(3n) {
-
         border-right: none;
     }
 
-
     .two-columns {
-
         grid-template-columns: 1fr;
     }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
-
 <div class="character-page">
-
-
     <!-- =========================
          HEADER
          ========================= -->
-
     <header class="character-header">
-
         <div>
 
             <div class="character-label">
@@ -499,7 +366,6 @@ body {
             <h1 class="character-name">
                 久贺秀一
             </h1>
-
         </div>
 
         <img
@@ -507,11 +373,7 @@ body {
             src="<a href="https://v.imghos.co/JSzZmJmR" target="_blank"><img src="https://i.imghos.co/JSzZmJmR.png" alt="Image hébergée" /></a>"
             alt="Character portrait"
         >
-
     </header>
-
-
-
     <!-- =========================
          BASIC INFORMATION
          ========================= -->
