@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>郑翼</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #696969;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                郑翼
+            </h1>
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/lqiBOPAC.jpg"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                25
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                男
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                警察
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                山东潍坊
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                健康/清醒
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">75</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">35</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">75</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">70</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">脸上总是皮笑肉不笑的表情，黑色短发后梳，有几缕散在额前，黑色眼睛，右眼常年佩戴灰色眼罩，由于烧伤右眉有断处，皮肤晒得稍有些黑，常服一般会穿着红色上衣和深蓝色牛仔裤</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">有着自嘲式的正义感，对自己的职业有很重的责任感，对中国社会向好的公平发展有着莫名自然的积极信仰，关于自己的人生反而十分消极，对外貌有些不宣扬的自卑</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">父母亲，在上中学的妹妹，警校的搭档王莲</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">母校，调来高瞳前的工作单位</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">配枪</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">为执行卧底行动成为了老师，教育+20</p>
+            <p class="field-text">同性恋，目前未和任何人出柜，没有任何恋爱经验</p>
+            <p class="field-text">左利手，小学时父母试图纠正过，但最终失败了</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">在一次与嫌疑人的近距离械斗中对方的枪炸膛，导致右眼失明并在右脸留下烧伤疤痕</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">“当警察”这个理想，可以说是从自己的名字开始的。虽说不知父母是否有着这方面的期待而给他取了这个名字，从小就是乖孩子，头脑又好的郑翼还是顺利地完成了人生道路的前半程。当然，父母的教育方式也绝对称不上溺爱——尽管如此，郑翼并没有觉得这条路有什么不好的。也许他给这份职业操守找到了更为形而上的理由，也许他只是接受了必须承认父母的理想就是自己的理想。唯一的问题在于，在体制内同性恋可是很严重的——不过这也不用太担心。虽然郑翼明白自己从小学开始就对班里漂亮的男生有着多余而懵懂的在意，高中时期也曾和同性在夜晚的教室接吻，在无人的宿舍帮对方自慰，但那在毕业之后都结束了。直到今日，郑翼连任何交友软件都没有注册过，不想在档案上留下污点。但人的感情是无法控制的，进入大学，在警校这种同龄青年扎堆的地方，郑翼喜欢上了一个人——第一次明白什么是喜欢地喜欢上的——自己被分配到的搭档，王莲。那段时光美好到连回想都是一种奢侈。他听课中认真的蹙眉，训练时把自己放倒后伸过来的手，聊到未来时眼中闪烁的光。王莲的眼睛是特别的红色，而那些亮光像坠落其中的星星。作为搭档，他们也是特别一些的朋友，但也仅限于此。毕业那天郑翼给了对方一个拥抱，承诺各奔东西以后也要保持联络。如果我能有你这么特别该多好，那是郑翼唯一一次绝望地想。幸好，两人守住了这个承诺，也给郑翼留下一个维持友谊龌龊的理由。</p>
+            <br>
+            <p class="field-text">毕业后郑翼没有和大部分同学那样进入基层派出所打磨，而是顺利通过了公安联考，进入了潍坊市分局刑侦大队工作。那时感到的幸运很快被一场意外完全终结了。一次涉黑案件在布控时出现差池，硬是让已知持枪的嫌犯逃了出去。郑翼所在的小组去追，不知怎的，同组的师傅似乎不大待见自己，带着其他人将他甩在了后面，却恰恰让他孤身撞上折返回来的嫌犯。郑翼拚死搏斗，眼见着嫌犯拔出枪来——却在扣下扳机时炸了膛。在他的眼前炸开。于是，毕业两年，23岁的郑翼右眼失明，脸上还留下了大面积烧伤疤痕。没关系——郑翼安慰自己，左撇子射击时靠左眼瞄准，所以无伤大雅。况且，倘若那颗子弹正常发射，自己已经没命了。他发现自己渐渐可以什么都不真正在意了，哪怕这辈子要就此失去一半的光明，他更懊悔的却是自己最终放走了嫌疑人。后期调查判定他的上级严重失职，将他革职出了警队，郑翼觉得很自责。或许队里也有放弃伤员的念头，当接到调任高瞳，以教师的身份卧底调查失踪儿童，这个说是重大，实则就是外放的任务时，比起失落他更多是欣然。两年过去渐渐习惯了半瞎的生活，父母最近也开始催婚了，换个地方躲阵清净有什么怨言呢？况且，王莲就在高瞳——如果这个任务没有分配过来，恐怕自己也会主动请缨去争取的。身为高中理科班的一员，郑翼选择假扮一名物理老师，就此踏上了前往高瞳的路途。期待已久的重逢真的要到来了，只不过，自己现在的样子，恐怕会让对方吓一跳吧。这副样子又怎么配得上他呢？一直到坐上颠簸的大巴车，即使在膝上摊开了梳理线索的笔记本，望着窗外如柱的雨，郑翼都仍在踌躇。</p>
+            <br>
+            <p class="field-text">郑翼有个上初三的妹妹，与她相处的出乎意料地好。虽然处在叛逆期，她似乎很乐意有个当警察的哥哥，很多不情愿和父母说的心事或抱怨也会给哥哥发QQ。和王莲分开之后，她逐渐成为了郑翼的精神支柱。</p>
+            <br>
+            <p class="field-text">算四分之一个机械痴，喜欢研究生活中各种电器装置的内部结构，偶尔也会用拆开物件再把它们装回去的方式来解压。</p>
+            <br>
+            <p class="field-text">审美其实非常直男，一方面是职务不便，一方面也是没有下过功夫，不太擅长打扮。不穿制服时会偏好选择红色的着装，心里很清楚是因为这是王莲眼睛的颜色。</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
