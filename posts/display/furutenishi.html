@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>古手西进</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #FFF5EE;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                古手西进
+            </h1>
+
+            <br>
+           
+            <p> “我的脸将是你在白兰最后见到的东西。”</p>
+           
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/znXHUgyS.png"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                17
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                男
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                高中生
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                A町
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                健康/清醒
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">60</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">50</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">75</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">50</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">70</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">三白眼蓝瞳，二八分厚刘海白色短发，眉毛很粗，右脸颊上有一上一下对称的两颗小痣。常服就是校服</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">心底最深处的个性其实非常软弱，受6岁记忆的影响非常害怕黑帮的打架和火并。但姓氏所意味着光耀门楣的责任是骨血中的，因此这种本真的恐惧完全不会显露一丝一毫</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">两次给了自己生命的父亲古手狱，挚爱的母亲古手惠子，威名如山的外公古手龙一，像真正亲人一样的佐藤谦次郎大叔</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">冷清但至少可以称得上家的地方</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">妈妈生前留下的衣物与饰品</p>
+            <p class="field-text">小孩的一面是很喜欢吃酸奶</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">长相看起来比实际年龄要小，作风却十分成熟，有时生人勿近有时则不怒自威，会让人本能感受到天生权柄的气质</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">"不了解古手西进的人远远看去可能会认为他是个有些柔弱的男孩子，虽然身高出众但长着一张娃娃脸，学生气同样很重。如果站近他的话，这份认知就会完全改变了。在182的身高前任何人的呼吸空间仿佛都逼仄起来，被狭长的三白眼打量一下也有种莫名的厄运感。如果他开口的话，大概三五句就会让人意识到“啊……是不好惹的人”从而畏惧起来。</p>
+            <br>
+            <p class="field-text">“有身份的人就是不一样”，这句话无论是被奉承还是被讽刺的时候都曾听到过。对于这种评价，古手西进向来不会放在心里。与其说作为古手组唯一的少爷，古手西进才为人所知，倒不如说正因为是古手西进，这个姓氏才有了意义。在他眼中，自己已经是一个完美且持续进步的继承人了。从小到大从未断过搏击课程，也因此会被街头的混混说成是学院派的打架风格。剑术与枪法都算得上能拿出手，一些特殊的暗器也有所涉猎。除了格斗，虽然佐藤先生一直称他现在了解这些还太早，但他仍在找机会接触组织大大小小的业务管理，偶尔也读一点文件。若是和人洽商的场合，什么时候该谦卑退让，什么时候该强硬施压，什么才算是不卑不亢的黑白通吃之道，为了成为真正的接班人而文武兼修着。</p>
+            <br>
+            <p class="field-text">有一件事古手西进没有向任何人倾诉过，那就是6岁所经历的那场火并给自己带来了不可磨灭的阴影。他打心底恐惧人的拳脚，刀刃的利度与枪口的火光。每次打架站在其他的不良前，他都能看到自己变成尸体的样子，和6岁那年第一次看到的死人重合在一起。古手西进怕的想要逃走，或者当场吐到天翻地覆。但他一次都没有这样做过，甚至连眼皮都没有眨过。只有自己能听到的心跳擂鼓令肾上腺素飙升，反而会提高他的专注度与豁出去的决心。即使这样，古手西进也从未厌恶或反抗过自己的家族。身份对他来说并不困扰到是枷锁，也并不光荣到视作存在的意义。黑道背景的家庭只是他的生活，就像每个人的生活都是不同的，就像每个人的生活都不会事事顺着心意发生，这漩涡中的一切正是自己要迎接的故乡。如果幻想普通学生的生活，也会想到在他们眼中的不良生活与实际有着很大出入，而认为自己所以为的普通也不是那样而作罢。熟悉超越未知。如果要用一句歌词来形容古手西进的话，大概会是“你从未看透你只想感受慷慨赴死的颤抖。”比起姓氏的分量本身有多重，他不负期待成为少爷身份该有的模样，更多的是因为不想让重要之人失望。登顶最高峰之前会骄傲地走好每一步路吧，而到那时候自己无论是生是死，是善是恶，都让人无比期待啊。</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
