@@ -6,8 +6,6 @@
    
 <title>久贺秀一</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
 
 /* =========================
@@ -186,6 +184,19 @@ body {
     text-transform: uppercase;
 }
 
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
 /* =========================
    ATTRIBUTES
    ========================= */
@@ -291,11 +302,11 @@ body {
    FOOTER
    ========================= */
    
-.footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #3b5f86;
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
 }
 
 /* =========================
@@ -353,12 +364,15 @@ body {
 </head>
 
 <body>
-   <a href="/coclogarchives/posts/display.html" class="back-link">← 返回</a>
 
 <div class="character-page">
     <!-- =========================
          HEADER
          ========================= -->
+    <a href="/coclogarchives/index.html" class="back-link">
+    ← 返回
+    </a>
+   
     <header class="character-header">
         <div>
             <div class="character-label">
@@ -604,9 +618,11 @@ body {
          FOOTER
          ========================= -->
 
-   <div class="footer">
+   <hr>
+   
+   <footer class="character-footer">
     COC日志存档
-   </div>
+   </footer>
 </div>
    
 </body>
