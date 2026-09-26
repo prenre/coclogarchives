@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>娜提雅·南希</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #D2B48C;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                娜提雅·南希（Nadia Nancy）
+            </h1>
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/oQgHBimb.jpg"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                26
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                女
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                记者
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                西欧某地
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                健康/清醒
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">75</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">40</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">80</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">蓝色眼睛，梳着棕色干练短发的女性。日常职业装为白色花边翻领长袖衬衫，领口处有和眼睛颜色一样的蝴蝶结绑带</p>
+            <p class="field-text">外出时会披一件灰色风衣"</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">作为受过良好教育的女性，是价值观十分前卫甚至可以称得上反叛的左翼。有趣的是同时因家庭传统而信仰天主教，喜欢用自己的理解去解读经文。算是对世界自由，对自己保守的典范了</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">努力工作为自己攒够学费的父亲，拜伦·奥斯汀（前夫）</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">所毕业的大学，给予自己认可的报社，丈夫所在的墓地</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">结婚戒指</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">梦想家，坚信媒体的力量与正义的重要性。个人来说，是严肃认真的性格，有时可以说是傲娇属性。丈夫去世后，变得不易与人敞开心扉</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">无，但右眼眼角有一颗小痣，不仔细看不容易发现</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">有关丈夫惨死的创伤记忆，类似的场景都会导致应激</p>
+            <p class="field-text">中度洁癖，会有持续清洗自己的倾向</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">娜提雅出生于一个贫困的天主教家庭，父亲是钢铁厂的搅炼工人，而母亲是偶尔出出小摊的家庭主妇。从小娜提雅就展现出了语言天赋——她喜欢趴在房间的窗口读报，也会从其他稍微富有些的邻居家借各种类型的书籍来看。他们的生活是困难的，父亲一周六天都要朝九晚五的工作，一家人只有在周日上教会时才有相处的时间。但娜提雅的父母对她充满了爱。见她如此聪慧好学，两人拼尽全力，在她足够年龄那年，终于攒齐了能够负担普通大学一年学费的钱，把她送去接受了高等教育。满是感激又心疼父母的娜提雅深知他们的不易，便在未来的学期中一面修习课程一面在校内图书馆兼职赚钱。她选择了自己最向往的文学系。女人在大学中很稀少——工人阶级的孩子更是被歧视的对象。但也有人能理解这份双重困难，并看到娜提雅的不凡。与她同系的男生，拜伦·奥斯汀在图书馆注意到了她，与她攀谈后发现二人有着许多的相似之处：十八岁、家境清贫、喜欢德国文学。二人很快便坠入了爱河，并约定了在毕业后的终身——婚姻的殿堂。</p>
+            <p class="field-text">大学的时光转瞬而过，毕业后娜提雅成功进入了报社，找到了一份自己一直心驰神往的记者工作。拜伦全职在家写他的小说，虽然挣得不尽人意，但至少每天自己拖着疲惫的身体回到家时，能吃上可口的饭菜，和收获一个温暖的拥抱。就在娜提雅认为自己的人生已经可以称得上是幸福美满的时候，噩耗传来了——父亲在高炉作业时不幸因意外事故去世。“意外事故”，至少工厂的人是这样解释的。</p>
+            <p class="field-text">娜提雅无法接受。她无法接受自己此生最重要的人就这样在其他人的轻描淡写中消失——无论是作为女儿，还是作为记者，她都有奔赴现场，挖掘真相的理由。一个月的奔波和走访后，幕后交易的黑幕牵连到的人越来越深。似乎老板压榨工人已是常态，安全隐患更已是习以为常的事情。起重机钢缆断裂，吊运的铁水包砸下时父亲刚好路过。他和六名工友一起被红雨吞噬时，老板大概是在数这些黑帮供货商的分成吧，娜提雅坐在报社自己的书桌前提笔时这样想着。她写了一篇专栏，将这座工厂，老板，与幕后的涉黑交易尽数曝光。</p>
+            <p class="field-text">文章登报后，毫不夸张地说是引起了全社会的轰动。同事赞扬她的专业性与魄力，受害者感激她的正义感和同理心，普通民众称呼她为“英雄”……虽然这一切都是以父亲的牺牲换来的。但就在她身处于这样的事业巅峰中的时候，“登高易跌重”这一谚语就像墨菲定律般灵验了。被曝光的工厂老板虽然下狱，但与他交好的势力仍在。娜提雅只是平凡的记者，面对黑社会的刁难根本没有还手之力。在一个天色如墨般漆黑的深夜，那些暴徒像猛兽般破门闯入她的家，打砸声不绝于耳的同时，她亲眼目睹了丈夫拜伦——那个此生最珍视她，也是她最爱的男人——被五名壮汉用棍棒和砍刀围殴至死的场面。</p>
+            <p class="field-text">显然对方是为了折磨娜提雅而来，并不想杀人偿命，也许是因着她现在的身份和社会影响力，如若轻易身亡他们也会被怀疑吧。总之，只是受了些轻伤，惊吓过度的娜提雅，在那些人离开后，独自在角落瑟缩了很久。她盯着丈夫扭曲的身体——曾经干净的衬衫上染上大片的殷红，修剪整齐的指甲被掀翻掰折，英俊的面容被血污覆盖，因肿胀而无法辨认。</p>
+            <p class="field-text">为了避免回忆的感伤，娜提雅将自己的姓氏改回了婚前姓，休整了数月才回到报社工作。期间她断断续续从警局接到通知，对那伙暴徒的追捕迟迟没有进展，大概司法系统里也有他们的人吧。她不明白神为何要两次将她最重要的人从自己身边带走。虽然受到了极大的刺激，但这反而更点燃了她的斗志。正是因为不义如此丑恶，坚守真善美才变得如此重要。她不会再停下，绝对不会。</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
