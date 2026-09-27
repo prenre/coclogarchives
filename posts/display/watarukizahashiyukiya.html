@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>涉回幸也</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #8B0000;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                涉回幸也
+            </h1>
+
+            <br>
+           
+            <p> “我等着被你杀死 / 你还活着，真是太好了。”</p>
+           
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/bPqLZiqA.png"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                24
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                男
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                运动员
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                日本
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                死亡
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">60</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">50</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">75</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">45</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">60</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">酒红色的短发，对于体育人士来说剪的不算特别利落。</p>
+            <p class="field-text">瞳孔的颜色极浅，接近白色，大概是天生基因变异一类导致的。</p>
+            <p class="field-text">上班的装束就是T恤外面套一件卫衣，方便锻炼时随时脱下来。</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">一直相信努力可以改变命运，但现在处于对人生很迷茫的一个阶段。</p>
+            <p class="field-text">有想过要不要转行去当职业运动员，但也没有做那样决定的自信。</p>
+            <p class="field-text">目前的心态是得过且过，攒点钱，日常生活能有趣些就更好了。</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">会被他人当作开朗，其实只是喜欢被人们簇拥的感觉。</p>
+            <p class="field-text">本质上有些轻浮的性格。如果有了真正在乎的人，也会认真起来。</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">对过往被有心之人发掘而社会性死亡的担忧</p>
+            <p class="field-text">对童年遭受家暴的创伤记忆的阴影</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">高考结束后的人生像新生一样。</p>
+            <br>
+            <p class="field-text">幼时关于家暴的记忆太过深刻，即使身体上的痛苦停止，那份的恐惧也使自己毫不犹豫地申请了外地的大学，远离了曾经的家人。父母对自己的暴力，自己在校园的欺凌，曾经的人生完全称不上有任何“故事”可言，只有循环的血与痛，与对逃离这个地狱枯燥的盼望。讽刺的是，浸泡在这种高压环境下为自己锻炼出一副还不错的体格，一直以来不怎么热衷于课本便就这样考取了体育院校。</p>
+            <br>
+            <p class="field-text">大学四年的经历真的可以用脱胎换骨来形容。自己申请的是田径专业。高强度的训练并没有将自己击垮，反而令自己在全身心的投入中真的爱上了这项本是随意挑选的项目。热爱的事业，新交的朋友，多姿多彩的生活让自己将一切过去都抛诸脑后。</p>
+            <br>
+            <p class="field-text">只不过临近毕业时，除了付学费和生活费一直鲜少联系的父母发话了。他们不希望自己成为一名职业运动员——生涯太短，不稳定性太高，云云。事实上，他们已经在老家为他找好了一份体育老师的工作——离家近，他们也放心。</p>
+            <br>
+            <p class="field-text">考虑了很久后，自己答应了。于是久违地，毕业后他回到了这个地方。也许是触景生情，四年以来都消失不见的记忆又开始时不时地浮现。自己旁敲侧击打听过初中时被自己群体霸凌那位同学的下落，却发现已经没有人知道ta现在在何处了。</p>
+            <br>
+            <p class="field-text">这倒也没关系。体育老师的工作自己做的很好，因为年轻也招同学们的喜爱。出事的学生虽然算不上与自己关系最好的几位学生之一，也因着社团活动对他多多少少有些关心。因为对方一直去保健室的缘故，还以为他有什么样的病症，也对他愿意参与体育相关的活动感到诧异。</p>
+            <br>
+            <br>
+            <p class="field-text">直到后来听说了他自杀的消息。</p>
+            <br>
+            <p class="field-text">这名同学消失了，像初中那位受欺凌的同学一样的消失。那个人该不会是自杀了吧？从此往后，自己一直仰赖的校园生活也因着隐隐的恐慌变得不再一样了。</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
