@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>墨侵莲华</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #8B0000;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                墨侵莲华
+            </h1>
+
+            <br>
+           
+            <p> “惩罚他吧。”</p>
+           
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/xJVTuIBD.jpg"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                1100
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                男
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                散修修仙者
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                云游/东煌国漓洲
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                健康/清醒
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">50</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">45</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">75</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">80</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">55</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">刘海梳向一侧，扎着很长高马尾的黑发红瞳男人。身着灰色长袍，额头纹着赤色的半圆形花纹。红色的面纱系在两耳后侧，虽然对自己的易容术很自信，但为了防止意外遮挡了一下面部</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">母亲去世，仇人去世，连恩师也去世的当下，无牵无挂，快意人生就好了吧</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">会向自己强调是娘亲关疏影，而不是将自己作为弃子的周离泽</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">杀死周离泽的白水川</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">周离泽给的劫心铃</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">具有10点真气护盾，也算是攻防兼备的平衡了</p>
+            <p class="field-text">由于和周离泽曾经签订的血誓被破，月圆之夜会遭受反噬之痛，无法动用灵力也不能施法</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">天不怕地不怕！</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">作为凡人，在至亲被修仙者杀死而自己被修仙者所救后，踏上这条与命运万缕交织着的路似乎也是不可避免的，纵使这与娘亲一直以来对自己的所期背道而驰。</p>
+            <br>
+            <p class="field-text">作为刀宗修仙者，在天资和培养的双重维持下，自己杀人无数，依仗着一把利器，结果了所有的敌手。仿佛天下再也没有什么能躲过自己刀口的银光，世间再也没有任何自己踏不平的地方。</p>
+            <br>
+            <p class="field-text">作为周离泽的徒弟，在白水川他倒下之时，这一生一世之缘便被斩断了。此前自己从没想过，有一天也会剑指长师，与他反目。自己早就不再思考这是谁的过错，这只是我们二人必然的结局。</p>
+            <br>
+            <p class="field-text">作为墨侵莲华，在改头换面，如获新生后，周游四海便成了常态。江湖悠悠，各方皆友。像真正的散修那样，一人一自由。身前有路，从来没有逆转时空的机会，也没有不去快意恩仇的借口。</p>
+            <br>
+            <p class="field-text">作为东方濯流，曾经的一切仿佛化为流水，隐入尘烟。那么多的疑问，那么多的苦痛。那么多反复摩挲的回忆，被封印在无知无觉的心底深处。至少在过去挣扎着找上门之前，自己不会再往回看第二眼。</p>
+            <br>
+            <p class="field-text">顺便附上！一张东方濯流原始的脸</p>
+            <a href="https://v.imghos.co/bTVWNqCz" target="_blank"><img src="https://i.imghos.co/bTVWNqCz.png" alt="Image hébergée" /></a>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
