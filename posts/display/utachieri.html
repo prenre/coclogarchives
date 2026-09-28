@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<title>宇多智理</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --main-color: #16324f;
+    --dark-blue: #16324f;
+    --text-color: #1e3a5f;
+    --sub-color: #3b5f86;
+    --line-color: #b8d2f0;
+    --bg-color: #eaf3ff;
+    --box-color: #ffffff;
+    --accent-color: #2c5d91;
+}
+
+
+/* =========================
+   BASIC SETTINGS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+   
+    background: var(--bg-color); 
+    color: var(--text-color); 
+   
+    font-family: 
+       Georgia, 
+       "Times New Roman", 
+       serif; 
+   
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.character-page {
+    max-width: 1000px;
+
+    margin: 70px auto;
+    padding: 0 35px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.character-header {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+
+/* PC NAME */
+
+.character-name {
+    margin: 0;
+    padding-top: 15px;
+    color: #D3D3D3;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.character-quote {
+    margin-top: 105px;
+    margin-bottom: 0;
+
+    color: #3b5f86;;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    max-width: 650px;
+}
+
+/* small label above name */
+
+.character-label {
+    margin-bottom: 10px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* CHARACTER IMAGE */
+
+.character-image {
+    width: 220px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #D7E8F0;
+    border: 1px solid var(--line-color);
+}
+
+
+/* =========================
+   BASIC INFORMATION
+   ========================= */
+
+.basic-info {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 55px;
+}
+
+.info-item {
+    padding: 20px 15px;
+    border-right: 1px solid var(--line-color);
+}
+
+.info-item:last-child {
+    border-right: none;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--dark-blue);
+    font-size: 17px;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    margin: 0 0 25px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: #2c5d91;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Noto Serif SC", serif;
+
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.back-link:hover {
+    color: #4a7fb8;
+}
+   
+/* =========================
+   ATTRIBUTES
+   ========================= */
+
+.attributes {
+    display: grid;
+    grid-template-columns:
+        repeat(9, 1fr);
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+}
+
+.attribute {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--line-color);
+}
+
+.attribute:last-child {
+    border-right: none;
+}
+
+.attribute-name {
+    display: block;
+    color: var(--sub-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.attribute-cn {
+    display: block;
+    margin-top: 2px;
+    color: var(--sub-color);
+    font-size: 11px;
+}
+
+.attribute-value {
+    display: block;
+    margin-top: 7px;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   TEXT FIELDS
+   ========================= */
+
+.field {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-top: 1px solid var(--line-color);
+}
+
+.field:first-child {
+    border-top: none;
+}
+
+.field-title {
+    margin: 0 0 10px 0;
+    color: var(--main-color);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.field-text {
+    margin: 0;
+    max-width: 850px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* =========================
+   TWO-COLUMN FIELDS
+   ========================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr;
+    column-gap: 60px;
+}
+
+.two-columns .field {
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+   
+.character-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #3b5f86;
+
+    font-family: "Noto Serif SC", serif;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+    .character-page {
+        margin: 35px auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .character-name {
+        font-size: 40px;
+    }
+
+    .character-image {
+        max-width: 320px;
+    }
+
+    .basic-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .info-item {
+        border-bottom:
+            1px solid var(--line-color);
+    }
+
+    .attributes {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .attribute:nth-child(3n) {
+        border-right: none;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="character-page">
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <a href="/coclogarchives/posts/display/index.html" class="back-link">
+    ← 返回
+    </a>
+   
+    <header class="character-header">
+        <div>
+            <div class="character-label">
+                PLAYER CHARACTER
+            </div>
+           
+            <h1 class="character-name">
+                宇多智理
+            </h1>
+
+            <br>
+           
+            <p> “有些时候，你以为他们有选择，可其实并没有。”</p>
+           
+        </div>
+
+        <img
+            class="character-image"
+            src="https://i.imghos.co/TtofddLb.jpg"
+            alt="Character portrait"
+        >
+    </header>
+    <!-- =========================
+         BASIC INFORMATION
+         ========================= -->
+
+    <section class="basic-info">
+        <div class="info-item">
+            <span class="info-label">
+                年龄
+            </span>
+            <span class="info-value">
+                18
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">
+                性别
+            </span>
+            <span class="info-value">
+                女
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                职业
+            </span>
+            <span class="info-value">
+                学生
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                住地/故乡
+            </span>
+            <span class="info-value">
+                日本
+            </span>
+        </div>
+       
+        <div class="info-item">
+            <span class="info-label">
+                状态
+            </span>
+            <span class="info-value">
+                健康/清醒
+            </span>
+        </div>
+    </section>
+
+    <!-- =========================
+         ATTRIBUTES
+         ========================= -->
+
+    <section class="section">
+        <h2 class="section-title">
+            属性
+        </h2>
+        <div class="attributes">
+            <div class="attribute">
+                <span class="attribute-name">STR</span>
+                <span class="attribute-cn">力量</span>
+                <span class="attribute-value">50</span>
+            </div>
+           
+            <div class="attribute">
+                <span class="attribute-name">DEX</span>
+                <span class="attribute-cn">敏捷</span>
+                <span class="attribute-value">65</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">WILL</span>
+                <span class="attribute-cn">意志</span>
+                <span class="attribute-value">85</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">CON</span>
+                <span class="attribute-cn">体质</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">APP</span>
+                <span class="attribute-cn">外貌</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">EDU</span>
+                <span class="attribute-cn">教育</span>
+                <span class="attribute-value">60</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">SIZ</span>
+                <span class="attribute-cn">体型</span>
+                <span class="attribute-value">55</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">INT</span>
+                <span class="attribute-cn">智力</span>
+                <span class="attribute-value">70</span>
+            </div>
+
+            <div class="attribute">
+                <span class="attribute-name">LUCK</span>
+                <span class="attribute-cn">幸运</span>
+                <span class="attribute-value">75</span>
+            </div>
+        </div>
+    </section>
+   
+    <!-- =========================
+         CHARACTER INFORMATION
+         ========================= -->
+
+    <section class="section">
+        <!-- APPEARANCE -->
+        <div class="field">
+            <h2 class="field-title">
+                形象描述
+            </h2>
+            <p class="field-text">白色短发在耳后两侧扎成小辫，发尾挑染的黄色。未知原因导致的白色瞳孔，也因此将头发染成白色并声称天生如此，从未受到质疑。日常的装束是红领结黑色长款校服+哥哥送的一件青蓝色长款雨衣</p>
+        </div>
+
+        <!-- IDEAS & BELIEFS -->
+        <div class="field">
+            <h2 class="field-title">
+                思想与信念
+            </h2>
+            <p class="field-text">一直在寻找根治自身体质的办法，虽然渐渐也习惯了能看到幽灵的生活但仍会感到不便。意外地是容易被神棍蛊惑的类型，但对正统神社有些抵触。</p>
+        </div>
+
+        <!-- IMPORTANT PEOPLE -->
+        <div class="field">
+            <h2 class="field-title">
+                重要之人
+            </h2>
+            <p class="field-text">很久不见的亲生哥哥，唯一的朋友优希</p>
+        </div>
+
+        <!-- SIGNIFICANT LOCATIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                意义非凡之地
+            </h2>
+            <p class="field-text">第一次看到幽灵的桥洞</p>
+        </div>
+
+        <!-- TREASURED POSSESSIONS -->
+        <div class="field">
+            <h2 class="field-title">
+                宝贵之物
+            </h2>
+            <p class="field-text">哥哥送的雨衣</p>
+        </div>
+
+        <div class="field">
+            <h2 class="field-title">
+                特质
+            </h2>
+            <p class="field-text">因为一直撞鬼锻炼出了意志坚强</p>
+        </div>
+
+        <!-- WOUNDS & SCARS -->
+        <div class="field">
+            <h2 class="field-title">
+                伤口和疤痕
+            </h2>
+            <p class="field-text">无</p>
+        </div>
+
+        <!-- PHOBIAS & MANIAS -->
+        <div class="field">
+            <h2 class="field-title">
+                恐惧症和躁狂症
+            </h2>
+            <p class="field-text">还是有点害怕幽灵</p>
+        </div>
+
+        <!-- BACKGROUND -->
+        <div class="field">
+            <h2 class="field-title">
+                背景故事
+            </h2>
+            <p class="field-text">从有记忆起就与神秘事件和超自然力量相伴的少女。第一次见到【幽灵】大概是国小，那个父母们仍放心孩子自由地在外面追跑打闹，自己也还有朋友的时期，和伙伴们兴致盎然地玩捉鬼游戏时在一名同伴藏身的桥洞下见到了真正的鬼。后续的事情自己不太记得了，只记得自己在医院醒来，身边满是愧疚的伙伴，和看起来更为狐疑的大人。印象中神社的人来看过好几次，其他地方也来过打扮滑稽怪异的人，举办更为奇怪的仪式。就这样关于自己【不洁】的传言不胫而走——甚至逼得父母搬了一次家。</p>
+            <br>
+            <p class="field-text">自己的家庭并不幸福，父亲是一个懦弱的男人，只敢将脾气发泄在家人身上。而母亲是更为懦弱的女人，每当她看着自己不住地一声声叹息，自己都会下定决心，一定要摆脱这种阴阳眼的特质。唯一没有对自己有异样眼光的人是哥哥，记忆中哥哥总是会温柔地照顾、安慰自己，当自己因为下雨被困在学校时每次都是哥哥来接自己回家。可由于忍受不了父亲长期的家暴，在自己的国中时期，母亲最终选择与他离婚。在法院的判决下哥哥留在了父亲身边，而自己与母亲一起，永远地离开了这个家，也离开了哥哥。直到现在自己还穿着哥哥当年送给自己的，已经有些不合身的雨衣。那是自己感受过最早的善意。</p>
+            <br>
+            <p class="field-text">因为在远离故乡的地方和不知道自己历史的同学们一起上高中，自己的生活也趋于平静。虽然异常的一面总会无法控制地流露，但整体来说除了忍受孤独外自己几乎没有任何怨言。认识京极优希后，更是连这唯一的缺点都消失了。不过高中毕业在即，自己也不清楚未来是否还能和她——自己人生中唯一一位重要的朋友——保持这样的联系。所以，暑假前这最后一周强烈的不舍感，一定是来源于毕业季的忧愁吧？</p>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+   <hr>
+   
+   <footer class="character-footer">
+    COC日志存档
+   </footer>
+</div>
+   
+</body>
+</html>
